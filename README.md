@@ -10,6 +10,10 @@ will be Some of the "Greatest" Guitar players to have graced the airwaves.
 
 The game works by using any character or the space bar to activate the game.
 
+The A-Z keys will choose their respective character.
+The Space Bar will take care of the "space" between first, middle
+& last names
+
 Try to guess the "Hidden" guitar player by guessing letters.
 As you guess letters they will be kept track of.
 You have 10 guesses per game.

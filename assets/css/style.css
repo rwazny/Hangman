@@ -8,15 +8,21 @@ body {
   background: url("../images/Marshall_Wall.jpg") no-repeat;
   background-size: cover;
 }
+
+h2 {
+  font-family: "Freckle Face", cursive;
+  background-color: rgba(159, 29, 15, 0.954);
+}
 .container {
   text-align: center;
 }
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   padding: 5px;
   background-color: rgba(159, 29, 15, 0.954);
 }
@@ -28,7 +34,7 @@ h6 {
 }
 
 #currentWord {
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 
 #pressKeyTryAgain,

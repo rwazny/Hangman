@@ -2,34 +2,42 @@
 Great Guitarist Hangman
 */
 
-//"use strict";
+// Word list
 
-var guitarists =
-  // Word list
-  [
-    "GEORGE LYNCH",
-    "YNGWIE MALMSTEEN",
-    "STEVIE RAY VAUGHN",
-    "ERIC CLAPTON",
-    "JIMMY PAGE",
-    "EDDIE VAN HALEN",
-    "STEVE VAI",
-    "JOE SATRIANI",
-    "JIMI HENDRIX",
-    "THE EDGE",
-    "SLASH",
-    "JOHN PETRUCCI",
-    "STEVE MORSE",
-    "JEFF BECK",
-    "PETE TOWNSHEND",
-    "RANDY RHOADES",
-    "BUDDY GUY",
-    "KIETH RICHARDS",
-    "CARLOS SANTANA",
-    "GEORGE HARRISON",
-    "ANGUS YOUNG",
-    "PRINCE"
-  ];
+var guitarists = [
+  "PRINCE",
+  "GEORGE LYNCH",
+  "YNGWIE MALMSTEEN",
+  "STEVIE RAY VAUGHN",
+  "ERICCLAPTON",
+  "JIMMY PAGE",
+  "EDDIE VAN HALEN",
+  "STEVE VAI",
+  "JOE SATRIANI",
+  "JIMI HENDRIX",
+  "THE EDGE",
+  "SLASH",
+  "JOHN PETRUCCI",
+  "STEVE MORSE",
+  "JEFF BECK",
+  "RITCHIE BLACMORE",
+  "PETE TOWNSHEND",
+  "RANDY RHOADES",
+  "BUDDY GUY",
+  "KIETH RICHARDS",
+  "CARLOS SANTANA",
+  "GEORGE HARRISON",
+  "ANGUS YOUNG",
+  "DAVID  GILMOUR",
+  "ROBERTJOHNSON",
+  "ERIC JOHNSON",
+  "PAUL GILBERT",
+  "GUTHRIE GOVAN",
+  "TONY IOMMI",
+  "FRANK ZAPPA"
+];
+
+//var guitImage =
 
 const maxTry = 10; // Maximum number of tries player has
 
@@ -39,10 +47,12 @@ var guessingGuitarist = []; // The word we actually build to match the current w
 var remainingGuesses = 0; // How many tries the player has left
 var hasFinished = false; // Flag for 'press any key to try again'
 var wins = 0; // How many wins has the player cranked up
+var losses = 0; // How many wins has the player cranked up
 var guessingGuitaristText = [];
+var tempImage = "";
+var guitImage = "";
 
 // Guitarist sounds
-var keySound = new Audio("./assets/sounds/typewriter-key.wav");
 var winSound = new Audio("assets/sounds/EXCELLENT.m4a");
 var loseSound = new Audio("assets/sounds/Missed_Note_Sound.m4a");
 
@@ -52,13 +62,14 @@ function resetGame() {
 
   // Use Math.floor to round the random number down to the nearest whole.
   nameLength = Math.floor(Math.random() * guitarists.length);
+  tempImage = guitImage[nameLength];
 
   // Clear out arrays
   lettersGuessed = [];
   guessingGuitarist = [];
 
   // Make sure the hangman image is cleared
-  document.getElementById("hangmanImage").src = "";
+  //document.getElementById("hangmanImage").src = "";
 
   // Build the guessing word and clear it out
   for (var i = 0; i < guitarists[nameLength].length; i++) {
@@ -77,10 +88,9 @@ function resetGame() {
 //  Updates the display on the HTML Page
 function updateDisplay() {
   document.getElementById("totalWins").innerText = wins;
-
+  document.getElementById("totalLosses").innerText = losses;
   // Display how much of the word we've already guessed on screen.
-  // Printing the array would add commas (,) - so we concatenate a string from each value in the array.
-  var guessingGuitaristText = "";
+
   for (var i = 0; i < guessingGuitarist.length; i++) {
     guessingGuitaristText += guessingGuitarist[i];
   }
@@ -89,12 +99,6 @@ function updateDisplay() {
   document.getElementById("currentWord").innerText = guessingGuitarist;
   document.getElementById("remainingGuesses").innerText = remainingGuesses;
   document.getElementById("guessedLetters").innerText = lettersGuessed;
-}
-
-// Updates the image depending on how many guesses
-function updateHangmanImage() {
-  document.getElementById("hangmanImage").src =
-    "assets/images/" + (maxTry - remainingGuesses) + ".png";
 }
 
 // This function takes a letter and finds all instances of
@@ -113,7 +117,7 @@ function evaluateGuess(letter) {
   // if there are no indicies, remove a guess and update the hangman image
   if (positions.length <= 0) {
     remainingGuesses--;
-    updateHangmanImage();
+    //updateHangmanImage();
   } else {
     // Loop through all the indicies and replace the '_' with a letter.
     for (var i = 0; i < positions.length; i++) {
@@ -128,8 +132,11 @@ function checkWin() {
     document.getElementById("pressKeyTryAgain").style.cssText =
       "display: block";
     wins++;
+    document.getElementById("totalWins").innerText = wins;
+    //document.getElementById(guitImage).src = tempImage;
     winSound.play();
     hasFinished = true;
+    //resetGame();
   }
 }
 
@@ -139,9 +146,12 @@ function checkLoss() {
     loseSound.play();
     document.getElementById("gameover-image").style.cssText = "display: block";
     document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
-    loss++;
+    losses++;
+    document.getElementById("totalLosses").innerText = losses;
+    //document.getElementById(guitImage).src = tempImage;
     loseSound.play();
     hasFinished = true;
+    //resetGame();
   }
 }
 
@@ -164,8 +174,7 @@ document.onkeydown = function(event) {
     hasFinished = false;
   } else {
     // Check to make sure a-z was pressed.
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-      keySound.play();
+    if (event.keyCode >= 32 && event.keyCode <= 90) {
       makeGuess(event.key.toUpperCase());
       updateDisplay();
       checkWin();

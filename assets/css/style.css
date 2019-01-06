@@ -37,11 +37,6 @@ h6 {
   letter-spacing: 3px;
 }
 
-#pressKeyTryAgain,
-#gameover-image,
-#youwin-image {
-  display: none;
-}
 .gameplay-column {
   padding-top: 20px;
   border: 5px solid black;

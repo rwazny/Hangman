@@ -9,6 +9,11 @@ body {
   background-size: cover;
 }
 
+#youwin-image,
+#gameover-image {
+  align-content: center;
+}
+
 h2 {
   font-family: "Freckle Face", cursive;
   background-color: rgba(159, 29, 15, 0.954);
@@ -25,12 +30,6 @@ h6 {
     "Lucida Sans", Arial, sans-serif;
   padding: 5px;
   background-color: rgba(159, 29, 15, 0.954);
-}
-#title-image,
-#gameover-image,
-#youwin-image {
-  display: block;
-  margin: 0 auto;
 }
 
 #currentWord {

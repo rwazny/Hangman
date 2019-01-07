@@ -9,7 +9,7 @@ var guitarists = [
   "GEORGE LYNCH",
   "YNGWIE MALMSTEEN",
   "STEVIE RAY VAUGHN",
-  "ERICCLAPTON",
+  "ERIC CLAPTON",
   "JIMMY PAGE",
   "EDDIE VAN HALEN",
   "STEVE VAI",
@@ -28,7 +28,7 @@ var guitarists = [
   "CARLOS SANTANA",
   "GEORGE HARRISON",
   "ANGUS YOUNG",
-  "DAVID  GILMOUR",
+  "DAVID GILMOUR",
   "ROBERTJOHNSON",
   "ERIC JOHNSON",
   "PAUL GILBERT",
@@ -49,8 +49,8 @@ var hasFinished = false; // Flag for 'press any key to try again'
 var wins = 0; // How many wins has the player cranked up
 var losses = 0; // How many wins has the player cranked up
 var guessingGuitaristText = [];
-var tempImage = "";
-var guitImage = "";
+//var tempImage = "";
+//var guitImage = "";
 
 // Guitarist sounds
 var winSound = new Audio("assets/sounds/EXCELLENT.m4a");

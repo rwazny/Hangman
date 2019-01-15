@@ -29,12 +29,22 @@ var guitarists = [
   "GEORGE HARRISON",
   "ANGUS YOUNG",
   "DAVID GILMOUR",
-  "ROBERTJOHNSON",
+  "ROBERT JOHNSON",
   "ERIC JOHNSON",
   "PAUL GILBERT",
   "GUTHRIE GOVAN",
   "TONY IOMMI",
-  "FRANK ZAPPA"
+  "FRANK ZAPPA",
+  "WES MONTGOMERY",
+  "ALLAN HOLDSWORTH",
+  "STANLEY JORDAN",
+  "JOHN 5",
+  "BUCKETHEAD",
+  "ALEX LIFESON",
+  "JOHN MCLAUGHLIN",
+  "LES PAUL",
+  "VINNIE MOORE",
+  "JERRY GARCIA"
 ];
 
 //var guitImage =
@@ -48,6 +58,7 @@ var remainingGuesses = 0; // How many tries the player has left
 var hasFinished = false; // Flag for 'press any key to try again'
 var wins = 0; // How many wins has the player cranked up
 var losses = 0; // How many wins has the player cranked up
+var gameover = 0; // It goes to Eleven!!
 var guessingGuitaristText = [];
 //var tempImage = "";
 //var guitImage = "";
@@ -55,6 +66,7 @@ var guessingGuitaristText = [];
 // Guitarist sounds
 var winSound = new Audio("assets/sounds/EXCELLENT.m4a");
 var loseSound = new Audio("assets/sounds/Missed_Note_Sound.m4a");
+var gameOver = new Audio("");
 
 // Reset our game-level variables
 function resetGame() {
@@ -68,12 +80,14 @@ function resetGame() {
   lettersGuessed = [];
   guessingGuitarist = [];
 
-  // Make sure the hangman image is cleared
-  //document.getElementById("hangmanImage").src = "";
-
   // Build the guessing word and clear it out
-  for (var i = 0; i < guitarists[nameLength].length; i++) {
-    guessingGuitarist.push("_");
+  // .split guitarist - namelenght
+  var guiName = guitarists[nameLength].split(" ");
+  for (var i = 0; i < guiName.length; i++) {
+    for (var j = 0; j < guiName[i].length; j++) {
+      guessingGuitarist.push("_");
+    }
+    guessingGuitarist.push(" ");
   }
 
   // Hide game over and win images/text
@@ -181,4 +195,12 @@ document.onkeydown = function(event) {
       checkLoss();
     }
   }
+
+  //   // Game Over //
+  //  document.onkeydown = function(event) {
+  //     if (gameover == 11) {
+  //       alert("game over");
+  //       return;
+  //     }
+  //   };
 };

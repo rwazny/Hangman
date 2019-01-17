@@ -12,6 +12,7 @@ body {
 #youwin-image,
 #gameover-image {
   align-content: center;
+  max-height: 300px;
 }
 
 h2 {

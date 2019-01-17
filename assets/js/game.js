@@ -47,7 +47,49 @@ var guitarists = [
   "JERRY GARCIA"
 ];
 
-//var guitImage =
+//Guitar player images
+var guitImage = [
+  "Prince.jpg",
+  "George_Lynch.jpg",
+  "Yngwie_Malmsteen.jpg",
+  "Stevie_Ray_Vaughan.jpg",
+  "Eric_Clapton.jpg",
+  "Jimmy_Page.png",
+  "Ediie_Van_Halen.jpg",
+  "Steve_Vai.jpg",
+  "Joe_Satriani.jpg",
+  "Jimi_Hendrix.jpg",
+  "The_Edge.jpg",
+  "Slash.jpg",
+  "John_Petrucci.jpg",
+  "Steve_Morse.jpg",
+  "Jeff_Beck.jpeg",
+  "Ritchie_Blackmore.jpg",
+  "Pete_Townshend.jpg",
+  "Randy_Rhoades.jpg",
+  "Buddy_Guy.jpg",
+  "Kieth_Richards.jpg",
+  "Santana.jpg",
+  "George_Harrison.jpg",
+  "AngusYoung.jpg",
+  "David_Gilmour.jpeg",
+  "Robert_Johnson.png",
+  "Eric_Johnson.jpg",
+  "Paul_Gilbert.jpg",
+  "Guthrie_Govan.jpg",
+  "Tony_Iommi.jpg",
+  "Frank_Zappa.jpg",
+  "Wes_Montgomery.jpg",
+  "Allan_Holdsworth.jpg",
+  "Stanley_Jordan.jpg",
+  "Jonh_5.jpg",
+  "Buckethead.jpg",
+  "Alex_Lifeson.jpg",
+  "John_McLaughlin.jpg",
+  "Les_Paul.jpg",
+  "Vinnie_Moore.jpg",
+  "Jerry_Garcia.jpg"
+];
 
 const maxTry = 10; // Maximum number of tries player has
 
@@ -60,13 +102,12 @@ var wins = 0; // How many wins has the player cranked up
 var losses = 0; // How many wins has the player cranked up
 var gameover = 0; // It goes to Eleven!!
 var guessingGuitaristText = [];
-//var tempImage = "";
-//var guitImage = "";
+var winImage = "";
 
 // Guitarist sounds
 var winSound = new Audio("assets/sounds/EXCELLENT.m4a");
 var loseSound = new Audio("assets/sounds/Missed_Note_Sound.m4a");
-var gameOver = new Audio("");
+var gameOver = new Audio("assets/sounds/GoTillEleven.mp3");
 
 // Reset our game-level variables
 function resetGame() {
@@ -74,7 +115,11 @@ function resetGame() {
 
   // Use Math.floor to round the random number down to the nearest whole.
   nameLength = Math.floor(Math.random() * guitarists.length);
-  tempImage = guitImage[nameLength];
+  winImage = guitImage[nameLength];
+
+  //for testing only
+  //nameLength = 1;
+  //winImage = guitImage[1];
 
   // Clear out arrays
   lettersGuessed = [];
@@ -101,6 +146,11 @@ function resetGame() {
 
 //  Updates the display on the HTML Page
 function updateDisplay() {
+  if (wins >= 11) {
+    //play audio
+    alert("play audio");
+    return false;
+  }
   document.getElementById("totalWins").innerText = wins;
   document.getElementById("totalLosses").innerText = losses;
   // Display how much of the word we've already guessed on screen.
@@ -139,14 +189,19 @@ function evaluateGuess(letter) {
     }
   }
 }
+
 // Checks for a win by seeing if there are any remaining underscores in the guessingword we are building.
 function checkWin() {
   if (guessingGuitarist.indexOf("_") === -1) {
-    document.getElementById("youwin-image").style.cssText = "display: block";
+    document.getElementById("youwin-image").style.cssText = "display: inline";
     document.getElementById("pressKeyTryAgain").style.cssText =
       "display: block";
+    //$('#pressKeyTryAgain').show();
+    //$('#pressKeyTryAgain').hide();
     wins++;
     document.getElementById("totalWins").innerText = wins;
+    $("#guitarist-image").attr("src", "assets/images/" + winImage);
+    $("#guitarist-image").css({ width: "300px" });
     //document.getElementById(guitImage).src = tempImage;
     winSound.play();
     hasFinished = true;
@@ -203,4 +258,16 @@ document.onkeydown = function(event) {
   //       return;
   //     }
   //   };
+
+  // Get the correct guitarist image to show ////
+  // function updateUIImg(sign) {
+  //   var signCap = sign.charAt(0).toUpperCase() + sign.slice(1);
+  //   var signTxt = signCap + ".png";
+  //   var signConst = signCap + "Constilation.png";
+  //   var signSym = signCap + "Symbol.png";
+
+  //   $("#sign").attr("src", "images/" + signTxt);
+  //   $("#signConst").attr("src", "images/" + signConst);
+  //   $("#signSymb").attr("src", "images/" + signSym);
+  // }
 };

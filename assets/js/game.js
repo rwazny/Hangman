@@ -20,7 +20,7 @@ var guitarists = [
   "JOHN PETRUCCI",
   "STEVE MORSE",
   "JEFF BECK",
-  "RITCHIE BLACMORE",
+  "RITCHIE BLACKMORE",
   "PETE TOWNSHEND",
   "RANDY RHOADES",
   "BUDDY GUY",
@@ -55,7 +55,7 @@ var guitImage = [
   "Stevie_Ray_Vaughan.jpg",
   "Eric_Clapton.jpg",
   "Jimmy_Page.png",
-  "Ediie_Van_Halen.jpg",
+  "Eddie_Van_Halen.jpg",
   "Steve_Vai.jpg",
   "Joe_Satriani.jpg",
   "Jimi_Hendrix.jpg",
@@ -82,7 +82,7 @@ var guitImage = [
   "Wes_Montgomery.jpg",
   "Allan_Holdsworth.jpg",
   "Stanley_Jordan.jpg",
-  "Jonh_5.jpg",
+  "John_5.jpg",
   "Buckethead.jpg",
   "Alex_Lifeson.jpg",
   "John_McLaughlin.jpg",
@@ -139,6 +139,7 @@ function resetGame() {
   document.getElementById("pressKeyTryAgain").style.cssText = "display: none";
   document.getElementById("gameover-image").style.cssText = "display: none";
   document.getElementById("youwin-image").style.cssText = "display: none";
+  //document.getElementById("guitarist-image").style.cssText = "display: none";
 
   // Show display
   updateDisplay();
@@ -148,7 +149,7 @@ function resetGame() {
 function updateDisplay() {
   if (wins >= 11) {
     //play audio
-    alert("play audio");
+    alert("GAME OVER - We Go To Eleven!!");
     return false;
   }
   document.getElementById("totalWins").innerText = wins;
@@ -250,24 +251,4 @@ document.onkeydown = function(event) {
       checkLoss();
     }
   }
-
-  //   // Game Over //
-  //  document.onkeydown = function(event) {
-  //     if (gameover == 11) {
-  //       alert("game over");
-  //       return;
-  //     }
-  //   };
-
-  // Get the correct guitarist image to show ////
-  // function updateUIImg(sign) {
-  //   var signCap = sign.charAt(0).toUpperCase() + sign.slice(1);
-  //   var signTxt = signCap + ".png";
-  //   var signConst = signCap + "Constilation.png";
-  //   var signSym = signCap + "Symbol.png";
-
-  //   $("#sign").attr("src", "images/" + signTxt);
-  //   $("#signConst").attr("src", "images/" + signConst);
-  //   $("#signSymb").attr("src", "images/" + signSym);
-  // }
 };

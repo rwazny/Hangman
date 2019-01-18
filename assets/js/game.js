@@ -44,7 +44,22 @@ var guitarists = [
   "JOHN MCLAUGHLIN",
   "LES PAUL",
   "VINNIE MOORE",
-  "JERRY GARCIA"
+  "JERRY GARCIA",
+  "JOE STRUMMER",
+  "ANDY SUMMERS",
+  "DIMEBAG DARREL",
+  "STEVE LUKATHER",
+  "STEVE STEVENS",
+  "JAKE E LEE",
+  "TONY MACALPINE",
+  "JOE PERRY",
+  "BRIAN MAY",
+  "BRIAN SETZER",
+  "NEAL SCHON",
+  "VERNON REID",
+  "JASON BECKER",
+  "BB KING",
+  "AL DI MEOLA"
 ];
 
 //Guitar player images
@@ -88,7 +103,22 @@ var guitImage = [
   "John_McLaughlin.jpg",
   "Les_Paul.jpg",
   "Vinnie_Moore.jpg",
-  "Jerry_Garcia.jpg"
+  "Jerry_Garcia.jpg",
+  "joe-strummer.jpg",
+  "Andy_Summers.jpg",
+  "Dimebag_Darrel.jpg",
+  "steve_lukather.jpg",
+  "Steve-Stevens.jpg",
+  "JakeE.jpg",
+  "TonyMacAlpine.jpg",
+  "Joe_Perry.jpg",
+  "Brian_May.jpeg",
+  "Brian_Setzer.jpg",
+  "Neal_Schon.jpeg",
+  "Vernon_Reid.jpg",
+  "Jason_Becker.jpeg",
+  "BB_King.jpg",
+  "AlDi_Meola.jpg"
 ];
 
 const maxTry = 10; // Maximum number of tries player has

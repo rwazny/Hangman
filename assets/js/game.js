@@ -179,7 +179,9 @@ function resetGame() {
 function updateDisplay() {
   if (wins >= 11) {
     //play audio
+    gameOver.play();
     alert("GAME OVER - We Go To Eleven!!");
+
     return false;
   }
   document.getElementById("totalWins").innerText = wins;

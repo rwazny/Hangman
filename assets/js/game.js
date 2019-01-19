@@ -181,7 +181,6 @@ function updateDisplay() {
     //play audio
     gameOver.play();
     alert("GAME OVER - We Go To Eleven!!");
-
     return false;
   }
   document.getElementById("totalWins").innerText = wins;
@@ -238,6 +237,8 @@ function checkWin() {
     //document.getElementById(guitImage).src = tempImage;
     winSound.play();
     hasFinished = true;
+
+    
     //resetGame();
   }
 }

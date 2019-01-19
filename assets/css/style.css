@@ -45,3 +45,12 @@ h6 {
   min-height: 500px;
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+.btn-reset {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  align-content: center;
+  background-color: rgba(159, 29, 15, 0.954);
+  color: white;
+  cursor: pointer;
+}

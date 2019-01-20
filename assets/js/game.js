@@ -59,7 +59,16 @@ var guitarists = [
   "VERNON REID",
   "JASON BECKER",
   "BB KING",
-  "AL DI MEOLA"
+  "AL DI MEOLA",
+  "CHET ATKINS",
+  "ANDY TIMMONS",
+  "NEIL YOUNG",
+  "MUDDY WATERS",
+  "ZAKK WYLDE",
+  "GREG HOWE",
+  "DUANE ALLMAN",
+  "WARREN DEMARTINI",
+  "MARTY FRIEDMAN"
 ];
 
 //Guitar player images
@@ -118,7 +127,16 @@ var guitImage = [
   "Vernon_Reid.jpg",
   "Jason_Becker.jpeg",
   "BB_King.jpg",
-  "AlDi_Meola.jpg"
+  "AlDi_Meola.jpg",
+  "chet-atkins.jpg",
+  "Andy_Timmons.jpg",
+  "Neil_Young.jpg",
+  "Muddy_Waters.jpg",
+  "zakk_wylde.jpg",
+  "Greg_Howe.jpg",
+  "duane_allman.jpeg",
+  "Warren-DeMartini.jpg",
+  "Marty_Friedman.jpg"
 ];
 
 const maxTry = 10; // Maximum number of tries player has

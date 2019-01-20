@@ -237,9 +237,6 @@ function checkWin() {
     //document.getElementById(guitImage).src = tempImage;
     winSound.play();
     hasFinished = true;
-
-    
-    //resetGame();
   }
 }
 

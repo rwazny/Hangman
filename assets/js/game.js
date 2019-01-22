@@ -68,7 +68,17 @@ var guitarists = [
   "GREG HOWE",
   "DUANE ALLMAN",
   "WARREN DEMARTINI",
-  "MARTY FRIEDMAN"
+  "MARTY FRIEDMAN",
+  "ACE FREHLEY",
+  "ROBERT FRIPP",
+  "JOHNNY WINTER",
+  "PETER BUCK",
+  "GARY MOORE",
+  "DAVE MUSTAINE",
+  "JOE BONAMASSA",
+  "BILLY GIBBONS",
+  "MARK KNOPFLER",
+  "ROBIN TROWER"
 ];
 
 //Guitar player images
@@ -136,13 +146,23 @@ var guitImage = [
   "Greg_Howe.jpg",
   "duane_allman.jpeg",
   "Warren-DeMartini.jpg",
-  "Marty_Friedman.jpg"
+  "Marty_Friedman.jpg",
+  "Ace_Frehley.jpg",
+  "Robert_fripp.jpg",
+  "johnny-winter.jpg",
+  "Peter_Buck.jpg",
+  "gary_moore.jpg",
+  "Dave_Mustaine.jpg",
+  "joe-bonamassa.jpg",
+  "Billy_Gibbons.jpg",
+  "Mark_Knopfler.jpg",
+  "Robin_Trower.jpg"
 ];
 
 const maxTry = 10; // Maximum number of tries player has
 
 var lettersGuessed = []; // Stores the letters the user guessed
-var nameLength; // Index of the current word in the array
+var nameLength = ""; // Index of the current word in the array
 var guessingGuitarist = []; // The word we actually build to match the current word
 var remainingGuesses = 0; // How many tries the player has left
 var hasFinished = false; // Flag for 'press any key to try again'
@@ -270,6 +290,12 @@ function checkLoss() {
     loseSound.play();
     hasFinished = true;
     //resetGame();
+
+    //   // updateHangmanImage() function
+    //   updateHangmanImage: function () {
+    //     // Displays the new hangman image
+    //     document.getElementById("hangmanImage").src = "assets/images/" + (this.maxTries - this.remainingGuesses) + ".png";
+    // },
   }
 }
 

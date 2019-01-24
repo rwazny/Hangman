@@ -213,7 +213,6 @@ function resetGame() {
   updateDisplay();
 }
 
-//  Updates the display on the HTML Page
 function updateDisplay() {
   if (wins >= 11) {
     //play audio
@@ -228,12 +227,38 @@ function updateDisplay() {
   for (var i = 0; i < guessingGuitarist.length; i++) {
     guessingGuitaristText += guessingGuitarist[i];
   }
-
+  console.log(guessingGuitarist);
   //
-  document.getElementById("currentWord").innerText = guessingGuitarist;
+  var current = guessingGuitarist.toString();
+  current = current.replace(/\s/g, "&nbsp;");
+  current = current.replace(/,/g, " ");
+
+  document.getElementById("currentWord").innerHTML = current;
   document.getElementById("remainingGuesses").innerText = remainingGuesses;
   document.getElementById("guessedLetters").innerText = lettersGuessed;
 }
+
+//  Updates the display on the HTML Page
+// function updateDisplay() {
+//   if (wins >= 11) {
+//     //play audio
+//     gameOver.play();
+//     alert("GAME OVER - We Go To Eleven!!");
+//     return false;
+//   }
+//   document.getElementById("totalWins").innerText = wins;
+//   document.getElementById("totalLosses").innerText = losses;
+//   // Display how much of the word we've already guessed on screen.
+
+//   for (var i = 0; i < guessingGuitarist.length; i++) {
+//     guessingGuitaristText += guessingGuitarist[i];
+//   }
+
+//   //
+//   document.getElementById("currentWord").innerText = guessingGuitarist;
+//   document.getElementById("remainingGuesses").innerText = remainingGuesses;
+//   document.getElementById("guessedLetters").innerText = lettersGuessed;
+// }
 
 // This function takes a letter and finds all instances of
 // appearance in the string and replaces them in the guess word.

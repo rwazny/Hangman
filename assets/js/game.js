@@ -213,6 +213,12 @@ function resetGame() {
   updateDisplay();
 }
 
+// document.onkeydown = function(event) {
+//   // If we finished a game, dump one keystroke and reset.
+//   if (hasFinished) {
+//     resetGame();
+//     hasFinished = false;
+//   }
 function updateDisplay() {
   if (wins >= 11) {
     //play audio

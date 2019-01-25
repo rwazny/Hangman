@@ -78,7 +78,14 @@ var guitarists = [
   "JOE BONAMASSA",
   "BILLY GIBBONS",
   "MARK KNOPFLER",
-  "ROBIN TROWER"
+  "ROBIN TROWER",
+  "DEREK TRUCKS",
+  "RY COODER",
+  "RICHIE KOTZEN",
+  "PAT TRAVERS",
+  "NANCY WILSON",
+  "LITA FORD",
+  "JENNIFER BATTEN"
 ];
 
 //Guitar player images
@@ -156,7 +163,14 @@ var guitImage = [
   "joe-bonamassa.jpg",
   "Billy_Gibbons.jpg",
   "Mark_Knopfler.jpg",
-  "Robin_Trower.jpg"
+  "Robin_Trower.jpg",
+  "Derek_Trucks.jpg",
+  "Ry_Cooder.jpg",
+  "richie-kotzen.jpg",
+  "Pat_Travers.jpg",
+  "Nancy_Wilson.jpg",
+  "Lita_Ford.jpg",
+  "Jennifer_Batten.jpg"
 ];
 
 const maxTry = 10; // Maximum number of tries player has
@@ -171,6 +185,7 @@ var losses = 0; // How many wins has the player cranked up
 var gameover = 0; // It goes to Eleven!!
 var guessingGuitaristText = [];
 var winImage = "";
+var hangmanImage = "";
 
 // Guitarist sounds
 var winSound = new Audio("assets/sounds/EXCELLENT.m4a");
@@ -202,6 +217,11 @@ function resetGame() {
     }
     guessingGuitarist.push(" ");
   }
+  //   // updateHangmanImage() function
+  //   updateHangmanImage: function (hangmanImage) {
+  //     // Displays the new hangman image
+  //     document.getElementById("hangmanImage").src = "assets/images/" + (this.maxTries - this.remainingGuesses) + ".png";
+  // },
 
   // Hide game over and win images/text
   document.getElementById("pressKeyTryAgain").style.cssText = "display: none";
@@ -213,12 +233,6 @@ function resetGame() {
   updateDisplay();
 }
 
-// document.onkeydown = function(event) {
-//   // If we finished a game, dump one keystroke and reset.
-//   if (hasFinished) {
-//     resetGame();
-//     hasFinished = false;
-//   }
 function updateDisplay() {
   if (wins >= 11) {
     //play audio
@@ -244,28 +258,6 @@ function updateDisplay() {
   document.getElementById("guessedLetters").innerText = lettersGuessed;
 }
 
-//  Updates the display on the HTML Page
-// function updateDisplay() {
-//   if (wins >= 11) {
-//     //play audio
-//     gameOver.play();
-//     alert("GAME OVER - We Go To Eleven!!");
-//     return false;
-//   }
-//   document.getElementById("totalWins").innerText = wins;
-//   document.getElementById("totalLosses").innerText = losses;
-//   // Display how much of the word we've already guessed on screen.
-
-//   for (var i = 0; i < guessingGuitarist.length; i++) {
-//     guessingGuitaristText += guessingGuitarist[i];
-//   }
-
-//   //
-//   document.getElementById("currentWord").innerText = guessingGuitarist;
-//   document.getElementById("remainingGuesses").innerText = remainingGuesses;
-//   document.getElementById("guessedLetters").innerText = lettersGuessed;
-// }
-
 // This function takes a letter and finds all instances of
 // appearance in the string and replaces them in the guess word.
 function evaluateGuess(letter) {
@@ -282,7 +274,7 @@ function evaluateGuess(letter) {
   // if there are no indicies, remove a guess and update the hangman image
   if (positions.length <= 0) {
     remainingGuesses--;
-    //updateHangmanImage();
+    updateHangmanImage();
   } else {
     // Loop through all the indicies and replace the '_' with a letter.
     for (var i = 0; i < positions.length; i++) {

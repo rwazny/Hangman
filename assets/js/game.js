@@ -176,6 +176,8 @@ var guitImage = [
   "Joan_Jett",
   "Bonnie_Raitt.jpg"
 ];
+// hangman loser image //
+// var hangmanImage = "LOSEguitar_Hangman1.png",;
 
 const maxTry = 10; // Maximum number of tries player has
 
@@ -189,7 +191,6 @@ var losses = 0; // How many wins has the player cranked up
 var gameover = 0; // It goes to Eleven!!
 var guessingGuitaristText = [];
 var winImage = "";
-var hangmanImage = "";
 
 // Guitarist sounds
 var winSound = new Audio("assets/sounds/EXCELLENT.m4a");

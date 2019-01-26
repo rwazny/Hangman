@@ -85,7 +85,9 @@ var guitarists = [
   "PAT TRAVERS",
   "NANCY WILSON",
   "LITA FORD",
-  "JENNIFER BATTEN"
+  "JENNIFER BATTEN",
+  "JOAN JETT",
+  "BONNIE RAITT"
 ];
 
 //Guitar player images
@@ -170,7 +172,9 @@ var guitImage = [
   "Pat_Travers.jpg",
   "Nancy_Wilson.jpg",
   "Lita_Ford.jpg",
-  "Jennifer_Batten.jpg"
+  "Jennifer_Batten.jpg",
+  "Joan_Jett",
+  "Bonnie_Raitt.jpg"
 ];
 
 const maxTry = 10; // Maximum number of tries player has
@@ -295,9 +299,10 @@ function checkWin() {
     document.getElementById("totalWins").innerText = wins;
     $("#guitarist-image").attr("src", "assets/images/" + winImage);
     $("#guitarist-image").css({ width: "300px" });
-    //document.getElementById(guitImage).src = tempImage;
+
     winSound.play();
-    hasFinished = true;
+    // hasFinished = true;
+    resetGame();
   }
 }
 
@@ -309,10 +314,12 @@ function checkLoss() {
     document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
     losses++;
     document.getElementById("totalLosses").innerText = losses;
+    // $("#hangmanImage").attr("src", "assets/images/" + hangmanImage);
+    // $("#hangmanImage").css({ width: "300px" });
     //document.getElementById(guitImage).src = tempImage;
     loseSound.play();
-    hasFinished = true;
-    //resetGame();
+    // hasFinished = true;
+    resetGame();
 
     //   // updateHangmanImage() function
     //   updateHangmanImage: function () {
@@ -348,4 +355,12 @@ document.onkeydown = function(event) {
       checkLoss();
     }
   }
+  $("btn-reset").on("click", function() {
+    $("btn-reset").hide();
+    $("#guitImage").empty();
+    // $("#questionblock").empty();
+    // for (var i = 0; i < holder.length; i++) {
+    //   options.push(holder[i]);
+    // }
+  });
 };

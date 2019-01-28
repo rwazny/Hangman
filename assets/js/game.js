@@ -177,7 +177,7 @@ var guitImage = [
   "Bonnie_Raitt.jpg"
 ];
 // hangman loser image //
-// var hangmanImage = "LOSEguitar_Hangman1.png",;
+var hangmanImage = ["LOSEguitar_Hangman1.png"];
 
 const maxTry = 10; // Maximum number of tries player has
 
@@ -253,7 +253,7 @@ function updateDisplay() {
     guessingGuitaristText += guessingGuitarist[i];
   }
   console.log(guessingGuitarist);
-  //
+
   var current = guessingGuitarist.toString();
   current = current.replace(/\s/g, "&nbsp;");
   current = current.replace(/,/g, " ");
@@ -315,9 +315,10 @@ function checkLoss() {
     document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
     losses++;
     document.getElementById("totalLosses").innerText = losses;
-    // $("#hangmanImage").attr("src", "assets/images/" + hangmanImage);
+    //document.getElementById(hangmanImage).src = hangmanImage;
+    //$("#hangmanImage").attr("src", "assets/images/" + hangmanImage);
     // $("#hangmanImage").css({ width: "300px" });
-    //document.getElementById(guitImage).src = tempImage;
+
     loseSound.play();
     // hasFinished = true;
     resetGame();
@@ -356,12 +357,12 @@ document.onkeydown = function(event) {
       checkLoss();
     }
   }
-  $("btn-reset").on("click", function() {
-    $("btn-reset").hide();
-    $("#guitImage").empty();
-    // $("#questionblock").empty();
-    // for (var i = 0; i < holder.length; i++) {
-    //   options.push(holder[i]);
-    // }
-  });
+  // $("btn-reset").on("click", function() {
+  //   $("btn-reset").hide();
+  //   $("#guitImage").empty();
+  // $("#questionblock").empty();
+  // for (var i = 0; i < holder.length; i++) {
+  //   options.push(holder[i]);
+  // }
+  // });
 };

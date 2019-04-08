@@ -173,7 +173,7 @@ var guitImage = [
   'Nancy_Wilson.jpg',
   'Lita_Ford.jpg',
   'Jennifer_Batten.jpg',
-  'Joan_Jett',
+  'Joan_Jett.jpg',
   'Bonnie_Raitt.jpg'
 ];
 var hang_tracker = 0;

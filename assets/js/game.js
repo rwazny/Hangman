@@ -237,12 +237,6 @@ function resetGame() {
     guessingGuitarist.push(' ');
   }
 
-  // Hide game over and win images/text
-  document.getElementById('pressKeyTryAgain').style.cssText = 'display: none';
-  document.getElementById('gameover-image').style.cssText = 'display: none';
-  document.getElementById('youwin-image').style.cssText = 'display: none';
-  document.getElementById('hangmanImage').style.cssText = 'display: none';
-
   // Show display
   updateDisplay();
 }
@@ -308,11 +302,6 @@ function evaluateGuess(letter) {
 // Checks for a win by seeing if there are any remaining underscores in the guessingword we are building.
 function checkWin() {
   if (guessingGuitarist.indexOf('_') === -1) {
-    // document.getElementById('youwin-image').style.cssText = 'display: inline';
-    // document.getElementById('pressKeyTryAgain').style.cssText =
-    // 'display: block';
-    //$('#pressKeyTryAgain').show();
-    //$('#pressKeyTryAgain').hide();
     wins++;
     document.getElementById('totalWins').innerText = wins;
     var img = $('<img>');
@@ -320,8 +309,6 @@ function checkWin() {
     img.css({ width: '300px' });
     $('#a').empty();
     $('#a').append(img);
-    //$('#guitarist-image').attr('src', 'assets/images/' + winImage);
-    //$('#guitarist-image').css({ width: '300px' });
 
     winSound.play();
     // hasFinished = true;
@@ -335,12 +322,7 @@ function checkLoss() {
     loseSound.play();
     losses++;
     document.getElementById('totalLosses').innerText = losses;
-    //document.getElementById(hangmanImage).src = hangmanImage;
-    //$("#hangmanImage").attr("src", "assets/images/" + hangmanImage);
-    // $("#hangmanImage").css({ width: "300px" });
 
-    // loseSound.play();
-    // hasFinished = true;
     resetGame();
   }
 }

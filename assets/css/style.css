@@ -61,6 +61,15 @@ h6 {
   z-index: -1;
 }
 
+#eleven {
+  width: 100%;
+  font-size: 50px;
+  margin-top: 20px;
+  font-family: 'Freckle Face', cursive;
+  color: rgba(254, 225, 6, 0.954);
+  text-align: center;
+}
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops

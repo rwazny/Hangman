@@ -174,7 +174,10 @@ var guitImage = [
   'Lita_Ford.jpg',
   'Jennifer_Batten.jpg',
   'Joan_Jett.jpg',
-  'Bonnie_Raitt.jpg'
+  'Bonnie_Raitt.jpg',
+  'Nuno_Bettencourt.jpg',
+  'Kirk_Hammett.jpg',
+  'willie-nelson.jpg'
 ];
 var hang_tracker = 0;
 

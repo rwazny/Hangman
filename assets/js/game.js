@@ -203,7 +203,7 @@ var guessingGuitarist = []; // The word we actually build to match the current w
 var remainingGuesses = 0; // How many tries the player has left
 var hasFinished = false; // Flag for 'press any key to try again'
 var wins = 0; // How many wins has the player cranked up
-var losses = 0; // How many wins has the player cranked up
+var losses = -1; // How many wins has the player cranked up
 var gameover = 0; // It goes to Eleven!!
 var guessingGuitaristText = [];
 var winImage = '';
@@ -304,7 +304,7 @@ function evaluateGuess(letter) {
 
 // Checks for a win by seeing if there are any remaining underscores in the guessingword we are building.
 function checkWin() {
-  if (guessingGuitarist.indexOf('_') === -1) {
+  if (guessingGuitarist.indexOf('_') === -1 && guessingGuitarist.length > 0) {
     wins++;
     document.getElementById('totalWins').innerText = wins;
     var img = $('<img>');
@@ -356,4 +356,8 @@ document.onkeydown = function(event) {
       checkLoss();
     }
   }
+  // Reset Game
+  $('#reset').on('click', function() {
+    $('#reset').empty();
+  });
 };

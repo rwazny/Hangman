@@ -309,7 +309,7 @@ function checkWin() {
     document.getElementById('totalWins').innerText = wins;
     var img = $('<img>');
     img.attr('src', 'assets/images/' + winImage);
-    img.css({ width: '300px' });
+    img.css({ width: '400px' });
     $('#a').empty();
     $('#a').append(img);
 

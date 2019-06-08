@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <script>
+          <button onclick="location.reload();">Refresh Page</button>
+          </script>
+          
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -56,10 +60,6 @@
             Use Keyboard to Make Guesses
           </h2>
 
-          <h5>
-            ** Use the Space Bar is for the "Spaces" <br />
-            between First & Last Names **
-          </h5>
 
           <h4>Wins</h4>
           <h5 id="totalWins"></h5>
@@ -76,13 +76,10 @@
           <h4>Letters Guessed</h4>
           <h3 id="guessedLetters"></h3>
           <div>
-            <button class="btn-reset" input type= "button" id="reset">ROCK AGAIN?</button>
-            <!-- <button onclick="myFunction()">Reload page</button> -->
-            <!-- <button class="btn btn-reset" id="btn-reset" type="submit"> -->
+            <!-- <button class="btn-reset" onclick="btn-reset" id="reset">ROCK AGAIN?</button> -->
+            <button onclick="location.reload()" id="reload">ROCK AGAIN?</button>
           </div>
-          
-      <!-- <img src="" id="guitImage" /> -->
-    </div>
+      </div>
     <div class= "img-fluid" id="eleven">...We go to Eleven...</div>
       </div>
 

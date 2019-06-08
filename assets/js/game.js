@@ -356,8 +356,9 @@ document.onkeydown = function(event) {
       checkLoss();
     }
   }
+
   // Reset Game
-  $('#reset').on('click', function() {
-    $('#reset').empty();
-  });
+  // $('#reset').on('click', function() {
+  //   $('#reset').resetGame();
+  // });
 };

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
       <script>
-          <button onclick="location.reload();">Refresh Page</button>
+          $(document).ready(function(){
+            $(":reset").css("background-color", "red");
+          });
           </script>
           
     <meta charset="UTF-8" />
@@ -77,6 +80,7 @@
           <h3 id="guessedLetters"></h3>
           <div>
             <!-- <button class="btn-reset" onclick="btn-reset" id="reset">ROCK AGAIN?</button> -->
+
             <button onclick="location.reload()" id="reload">ROCK AGAIN?</button>
           </div>
       </div>

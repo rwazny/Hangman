@@ -87,7 +87,8 @@ var guitarists = [
   'LITA FORD',
   'JENNIFER BATTEN',
   'JOAN JETT',
-  'BONNIE RAITT'
+  'BONNIE RAITT',
+  'FRANK GAMBALE'
 ];
 
 //Guitar player images
@@ -177,7 +178,11 @@ var guitImage = [
   'Bonnie_Raitt.jpg',
   'Nuno_Bettencourt.jpg',
   'Kirk_Hammett.jpg',
-  'willie-nelson.jpg'
+  'willie-nelson.jpg',
+  'Nili_Brosh.jpg',
+  'Ethan_Brosh',
+  'dweezil_zappa.jpg',
+  'Frank_Gambale.jpg'
 ];
 var hang_tracker = 0;
 
